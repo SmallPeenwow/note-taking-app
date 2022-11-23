@@ -9,7 +9,7 @@ type NoteFormProps = {
 	onSubmit: (data: NoteData) => void;
 	onAddTag: (tag: Tag) => void;
 	availableTags: Tag[];
-};
+} & Partial<NoteData>; // Passes in any data and not all is required when using Partial
 
 export function NoteForm({ onSubmit, onAddTag, availableTags }: NoteFormProps) {
 	const titleRef = useRef<HTMLInputElement>(null);
